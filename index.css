@@ -18,12 +18,10 @@ body {
 
 #weatherForecast {
     text-align: center;
-    /* color: whitesmoke; */
 }
 
 section {
     text-align: center;
-    display: none;
 }
 
 .tempAndHumidity {
@@ -32,17 +30,15 @@ section {
     margin-right: 10px;
 }
 
-/* #homeSection {
-    color: rgba(245, 245, 245, 0.754);
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(190, 187, 187); */
-/* text-shadow: 2px #d7dedf;
-    text-decoration: solid; */
+#homeSection {
+    display: block;
+}
 
 #hourlySection {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    display: none;
 }
 
 #warmestTime {

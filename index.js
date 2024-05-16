@@ -46,9 +46,10 @@ let clearResults = () => {
 }
 
 
+
 // Api request
-function getWeatherInfo() {
-    let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityNameInput.value}&units=metric&APPID=2095b65c75e8d13fe9e3b0e095b36936`;
+function getWeatherInfo(city) {
+    let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=2095b65c75e8d13fe9e3b0e095b36936`;
     $.ajax({
         url: weatherUrl,
         method: "GET",
@@ -70,33 +71,24 @@ searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
     if (cityNameInput.value === "") {
         alert("You have not enter a city yet!") // validation
+
     } else {
-        getWeatherInfo();
+        getWeatherInfo(cityNameInput.value);
         homeSection.style.display = "block" // Seting the Home section to be displayed first
         hourlySection.style.display = "none";
     }
 });
 
 home.addEventListener("click", () => {
-    if (cityNameInput.value === "") {
-        homeSection.style.display = "none"; // validation if the home section is clicked before entering a city name
-        alert("You have not enter a city yet!")
-    } else {
-        weatherForecast.style.display = "block";
-        homeSection.style.display = "block"; // when home is clicked, display home and hide hourly
-        hourlySection.style.display = "none";
-    }
+    weatherForecast.style.display = "block";
+    homeSection.style.display = "block"; // when home is clicked, display home and hide hourly
+    hourlySection.style.display = "none";
 });
 
 hourly.addEventListener("click", () => {
-    if (cityNameInput.value === "") {
-        hourlySection.style.display = "none"; // validation if the hourly section is clicked before entering a city name
-        alert("You have not enter a city yet!")
-    } else {
-        weatherForecast.style.display = "none";
-        homeSection.style.display = "none"; // when hourly is clicked, display hourly and hide home
-        hourlySection.style.display = "flex";
-    }
+    weatherForecast.style.display = "none";
+    homeSection.style.display = "none"; // when hourly is clicked, display hourly and hide home
+    hourlySection.style.display = "flex";
 })
 
 function printHome(response) {
@@ -151,5 +143,7 @@ let printHourly = (resultArray) => {
         tableBody.appendChild(row);
     }
 }
+
+getWeatherInfo("skopje");
 
 
