@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Weather App</title>
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <div id="navbarText">
+        <a href="#" id="home" class="navbar-brand">Home</a>
+        <a href="#" id="hourly" class="navbar-brand">Hourly</a>
+      </div>
+
+      <img class="navIcons" src="./images/icons8-summer-48.png" alt="Sun">
+      <img class="navIcons" src="./images/icons8-sun-behind-cloud-48.png" alt="sun-behind-cloud">
+      <img class="navIcons" src="./images/icons8-cloud-48.png" alt="Cloud">
+      <img class="navIcons" src="./images/icons8-cloud-with-rain-48.png" alt="Rain">
+      <img class="navIcons" src="./images/icons8-cloud-with-lightning-48.png" alt="cloud-with-lightning">
+      <img class="navIcons" src="./images/icons8-windy-weather-48.png" alt="windy-weather">
+      <img class="navIcons" src="./images/icons8-cloud-with-lightning-and-rain-48.png"
+        alt="cloud-with-lightning-and-rain">
+      <img class="navIcons" src="./images/icons8-cloud-with-snow-48.png" alt="snow">
+      <img class="navIcons" src="./images/icons8-foggy-64.png" alt="foggy">
+
+      <form class="d-flex">
+        <input id="cityNameInput" class="form-control me-2" type="text" placeholder="Enter city name">
+        <button id="searchBtn" class="btn btn-outline-success">Search</button>
+      </form>
+    </div>
+  </nav>
+  <br>
+  <h1 id="weatherForecast">Weather Forecast</h1>
+
+  <!-- Home - Weather Forecast -->
+  <section id="homeSection">
+    <br>
+    <h2 id="cityName">City Name:</h2>
+    <h3>Current temperature: </h3>
+    <h3>Feels Like: </h3>
+    <h3>Weather Condition: </h3>
+    <div id="temp" class="tempAndHumidity">
+      <div class="temp">Max temp: </div>
+      <div class="temp">Avg temp: </div>
+      <div class="temp">Low temp: </div>
+    </div>
+    <div id="humidity" class="tempAndHumidity">
+      <div class="humidity">Max humidity: </div>
+      <div class="humidity">Avg humidity: </div>
+      <div class="humidity">Low humidity: </div>
+    </div>
+    <br>
+    <h3 id="warmestTime">Warmest time of the period: </h3>
+    <h3>Coldest time of the period: </h3>
+  </section>
+
+  <!-- Hourly Data -->
+  <section id="hourlySection">
+    <h2>Hourly data</h2>
+    <br>
+    <table id="table" style="width: 70%;">
+      <tr>
+        <th>Icon</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Temperature</th>
+        <th>Humidity</th>
+        <th>Wind Speed</th>
+      </tr>
+      <tbody></tbody>
+    </table>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
